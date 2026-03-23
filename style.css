@@ -1,146 +1,157 @@
-/* ================= RESET ================= */
+/* IMPORT FONT */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
 
+/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+font-family:'Inter',sans-serif;
 }
 
-/* ================= BODY ================= */
-
+/* BODY */
 body{
-background:#f4f6fb;
+background:#f4f7fb;
+min-height:100vh;
+padding:25px;
 color:#333;
-line-height:1.6;
 }
 
 /* ================= NAVBAR ================= */
 
 nav{
-background:#2c3e50;
-padding:15px;
+background:white;
+padding:15px 25px;
+border-radius:12px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+margin-bottom:25px;
+position:sticky;
+top:0;
+z-index:1000;
 }
 
-.navbar{
+nav ul{
 display:flex;
 justify-content:center;
 align-items:center;
-gap:25px;
+gap:30px;
 list-style:none;
 flex-wrap:wrap;
 }
 
-.navbar li{
-display:inline-block;
-}
-
-.navbar a{
-color:white;
+nav a{
 text-decoration:none;
-font-weight:bold;
-padding:8px 15px;
-border-radius:6px;
+color:#333;
+font-weight:500;
+padding:8px 14px;
+border-radius:8px;
 transition:0.3s;
 }
 
-.navbar a:hover{
-background:#4f46e5;
+nav a:hover{
+background:#eef3ff;
+color:#4f46e5;
 }
 
 /* ================= CONTAINER ================= */
 
 .container{
 max-width:900px;
-margin:30px auto;
+margin:auto;
 background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+padding:35px;
+border-radius:14px;
+box-shadow:0 8px 30px rgba(0,0,0,0.08);
+animation:fadeIn 0.5s ease;
 }
 
-/* ================= JUDUL ================= */
+@keyframes fadeIn{
+from{opacity:0; transform:translateY(15px);}
+to{opacity:1; transform:translateY(0);}
+}
+
+/* ================= IMAGE ================= */
+
+.container img{
+display:block;
+margin:20px auto;
+width:140px;
+height:140px;
+object-fit:cover;
+border-radius:50%;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* ================= TITLES ================= */
 
 h1{
 text-align:center;
-margin-bottom:20px;
+margin-bottom:10px;
+font-weight:600;
 }
 
 h2{
-margin-top:20px;
+margin-top:25px;
 margin-bottom:10px;
 color:#4f46e5;
 }
 
-/* ================= FOTO PROFILE ================= */
+/* ================= BIODATA TABLE ================= */
 
-.profile-img{
-display:block;
-margin:auto;
-width:150px;
-height:150px;
-object-fit:cover;
-border-radius:10px;
-margin-bottom:20px;
-}
-
-/* ================= TABLE BIODATA ================= */
-
-table{
+.biodata-table{
 width:100%;
 border-collapse:collapse;
-}
-
-table td{
-padding:10px;
-border-bottom:1px solid #ddd;
-}
-
-/* ================= LIST PENDIDIKAN ================= */
-
-.ol-pendidikan{
-margin-left:20px;
-}
-
-.ol-pendidikan li{
-margin-bottom:8px;
-}
-
-/* ================= LIST SKILL ================= */
-
-.ul-skill{
-list-style:none;
 margin-top:10px;
 }
 
-.ul-skill li{
-background:#eef2ff;
-border-left:5px solid #4f46e5;
-padding:10px;
-margin:8px 0;
-border-radius:5px;
+.biodata-table td{
+padding:12px;
+border-bottom:1px solid #eee;
 }
 
-/* ================= HALAMAN LAYOUT ================= */
+.biodata-table tr:hover{
+background:#fafafa;
+}
+
+/* ================= FOOTER ================= */
+
+.footer{
+text-align:center;
+margin-top:25px;
+font-size:14px;
+color:#777;
+}
+
+/* ================= LAYOUT TABLE ================= */
 
 .layout-table{
 width:100%;
+max-width:1000px;
+margin:auto;
 border-collapse:collapse;
-margin-top:20px;
+background:white;
+border-radius:12px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
 }
 
 .header{
 background:#4f46e5;
 color:white;
 text-align:center;
-padding:20px;
+padding:25px;
 }
 
 .sidebar{
-background:#f3f4f6;
-width:25%;
+width:250px;
+background:#f9fafc;
 padding:20px;
 vertical-align:top;
+border-right:1px solid #eee;
+}
+
+.sidebar h3{
+margin-bottom:15px;
 }
 
 .sidebar ul{
@@ -151,30 +162,163 @@ list-style:none;
 margin-bottom:10px;
 }
 
-.content{
-padding:20px;
+.sidebar a{
+display:block;
+text-decoration:none;
+color:#444;
+padding:10px;
+border-radius:6px;
+transition:0.3s;
 }
 
-.footer{
-background:#2c3e50;
+.sidebar a:hover{
+background:#4f46e5;
 color:white;
-text-align:center;
-padding:15px;
-margin-top:20px;
 }
 
-/* ================= RESPONSIVE TABLET ================= */
+.content{
+padding:25px;
+line-height:1.7;
+}
+
+/* ================= SKILL ================= */
+
+.ul-skill{
+list-style:none;
+margin-top:15px;
+}
+
+.ul-skill li{
+padding:12px;
+margin:8px 0;
+background:#eef3ff;
+border-left:5px solid #4f46e5;
+border-radius:6px;
+font-weight:500;
+}
+
+/* ================= PENDIDIKAN ================= */
+
+.ol-pendidikan{
+margin-top:15px;
+padding-left:25px;
+line-height:1.8;
+}
+
+/* ================= FORM ================= */
+
+form{
+margin-top:20px;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input, select{
+padding:12px;
+border:1px solid #ccc;
+border-radius:8px;
+font-size:14px;
+transition:0.3s;
+}
+
+input:focus, select:focus{
+border-color:#4f46e5;
+outline:none;
+box-shadow:0 0 5px rgba(79,70,229,0.3);
+}
+
+button{
+padding:12px;
+background:#4f46e5;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
+}
+
+button:hover{
+background:#3730a3;
+transform:scale(1.03);
+}
+
+/* ================= KALKULATOR ================= */
+
+.calc-box{
+max-width:360px;
+margin:30px auto;
+background:#f1f5f9;
+padding:15px;
+border-radius:12px;
+box-shadow:0 5px 20px rgba(0,0,0,0.15);
+}
+
+/* DISPLAY */
+
+#display{
+width:100%;
+height:60px;
+font-size:22px;
+text-align:right;
+padding:10px;
+margin-bottom:10px;
+border:none;
+border-radius:8px;
+background:#e2e8f0;
+}
+
+/* GRID */
+
+.calc-grid{
+display:grid;
+grid-template-columns:repeat(5,1fr);
+gap:8px;
+}
+
+/* BUTTON */
+
+.calc-grid button{
+padding:15px;
+font-size:16px;
+border:none;
+border-radius:8px;
+background:linear-gradient(#e5e7eb,#d1d5db);
+cursor:pointer;
+transition:0.2s;
+font-weight:500;
+}
+
+.calc-grid button:hover{
+background:#c7d2fe;
+}
+
+/* EQUAL BUTTON (TINGGI 2 BARIS) */
+
+.equal{
+grid-row:span 2;
+background:#6366f1 !important;
+color:white;
+}
+
+.equal:hover{
+background:#4f46e5 !important;
+}
+
+/* ================= RESPONSIVE ================= */
 
 @media(max-width:768px){
 
-.container{
-margin:20px;
-padding:20px;
+body{
+padding:15px;
 }
 
-.profile-img{
-width:120px;
-height:120px;
+.container{
+padding:25px;
+}
+
+nav ul{
+gap:15px;
 }
 
 /* layout jadi vertikal */
@@ -187,33 +331,29 @@ width:100%;
 
 .sidebar{
 width:100%;
+border-right:none;
+border-bottom:1px solid #eee;
 }
 
 }
-
-/* ================= RESPONSIVE HP ================= */
 
 @media(max-width:480px){
 
+.container{
+padding:20px;
+}
+
+.container img{
+width:110px;
+height:110px;
+}
+
+nav ul{
+gap:10px;
+}
+
 h1{
 font-size:22px;
-}
-
-h2{
-font-size:18px;
-}
-
-.container{
-padding:15px;
-}
-
-.profile-img{
-width:100px;
-height:100px;
-}
-
-.navbar{
-gap:15px;
 }
 
 }
